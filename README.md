@@ -15,9 +15,9 @@ Documentation of required steps to deploy Extreme Networks fabric at John Deere 
 ## Extreme Appliance Guides
 Covers deployment process and upgrade process for Extreme Appliances.
 
-### Default Gateway Redundancy / First-Hop Resiliency
-- [AnyCast IP Gateway Config](AnyCast_Gateway.md)
-- [VRRP Config](vrrp_config.md)
+### ACL Filters
+- [OnboardingFilter Config](onbardingfilters.md)
+- [GuestFilter_Config](guestfilters.md)
     
 ### Extreme Networks - Analytics 
 - [Analytics](/ExtremeAppliance/Analytics/AnalyticsApplianceDeploy.md) 
