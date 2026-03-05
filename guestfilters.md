@@ -2,7 +2,7 @@
 
 ## Overview
 The Guest filter is designed to limit Guest Access on the network.  Guest Access might be interpurted different between customers, so this basic filter allows DHCP and DNS, while blocking any private subnet ranges.  Essentailly, allowing onlyh access to only the Internet, but accomodating local DNS and DHCP services.  Again, the default global action on filters is to Permit.
-If copying the configuration below, pay attention that the ACL ID is 1, this needs to be available on the switch.  If not, this needs to be changed to an available ACL number between 1-1999 (security ACLs).  
+If copying the configuration below, pay attention that the ACL ID is 1, this needs to be available on the switch.  If not, this needs to be changed to an available ACL number between 1-1999 (security ACLs).  Additionally, the guest VLAN and I-SID details are defined as variable placeholders, to be edited as required.
 
 Depending on where the client is entering the network, a VLAN filter may also be required.  A typical, scenario where an accociated VLAN filter would be required is on a collapsed core solution.  In this scenario, the IP addressing for the Guest and the Guest clients are both local and will not traverse the Fabric.
 
