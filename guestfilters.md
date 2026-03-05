@@ -27,15 +27,6 @@ filter acl ace protocol 1 5 src-port eq 68
 filter acl ace protocol 1 5 dst-port eq bootpServer
 filter acl ace 1 5 enable
 
-filter acl ace 1 6 name "PERMIT-DHCP_SERVER_67_TO_68"
-filter acl ace action 1 6 permit count
-filter acl ace action 1 6 permit
-filter acl ace ethernet 1 6 ether-type eq ip
-filter acl ace ip 1 6 ip-protocol-type eq udp
-filter acl ace protocol 1 6 src-port eq 67
-filter acl ace protocol 1 6 dst-port eq bootpClient
-filter acl ace 1 6 enable
-
 filter acl ace 1 10 name "PERMIT-DNS_UDP_DST53"
 filter acl ace action 1 10 permit count
 filter acl ace action 1 10 permit
@@ -44,14 +35,6 @@ filter acl ace ip 1 10 ip-protocol-type eq udp
 filter acl ace protocol 1 10 dst-port eq dns
 filter acl ace 1 10 enable
 
-filter acl ace 1 11 name "PERMIT-DNS_UDP_SRC53"
-filter acl ace action 1 11 permit count
-filter acl ace action 1 11 permit
-filter acl ace ethernet 1 11 ether-type eq ip
-filter acl ace ip 1 11 ip-protocol-type eq udp
-filter acl ace protocol 1 11 src-port eq 53
-filter acl ace 1 11 enable
-
 filter acl ace 1 12 name "PERMIT-DNS_TCP_DST53"
 filter acl ace action 1 12 permit count
 filter acl ace action 1 12 permit
@@ -59,14 +42,6 @@ filter acl ace ethernet 1 12 ether-type eq ip
 filter acl ace ip 1 12 ip-protocol-type eq tcp
 filter acl ace protocol 1 12 dst-port eq dns
 filter acl ace 1 12 enable
-
-filter acl ace 1 13 name "PERMIT-DNS_TCP_SRC53"
-filter acl ace action 1 13 permit count
-filter acl ace action 1 13 permit
-filter acl ace ethernet 1 13 ether-type eq ip
-filter acl ace ip 1 13 ip-protocol-type eq tcp
-filter acl ace protocol 1 13 src-port eq 53
-filter acl ace 1 13 enable
 
 filter acl ace 1 60 name "DENY-RFC1918-10/8"
 filter acl ace action 1 60 deny count
@@ -100,15 +75,6 @@ filter acl ace protocol 2 5 src-port eq 68
 filter acl ace protocol 2 5 dst-port eq bootpServer
 filter acl ace 2 5 enable
 
-filter acl ace 2 6 name "PERMIT-DHCP_SERVER_67_TO_68"
-filter acl ace action 2 6 permit count
-filter acl ace action 2 6 permit
-filter acl ace ethernet 2 6 ether-type eq ip
-filter acl ace ip 2 6 ip-protocol-type eq udp
-filter acl ace protocol 2 6 src-port eq 67
-filter acl ace protocol 2 6 dst-port eq bootpClient
-filter acl ace 2 6 enable
-
 filter acl ace 2 10 name "PERMIT-DNS_UDP_DST53"
 filter acl ace action 2 10 permit count
 filter acl ace action 2 10 permit
@@ -117,14 +83,6 @@ filter acl ace ip 2 10 ip-protocol-type eq udp
 filter acl ace protocol 2 10 dst-port eq dns
 filter acl ace 2 10 enable
 
-filter acl ace 2 11 name "PERMIT-DNS_UDP_SRC53"
-filter acl ace action 2 11 permit count
-filter acl ace action 2 11 permit
-filter acl ace ethernet 2 11 ether-type eq ip
-filter acl ace ip 2 11 ip-protocol-type eq udp
-filter acl ace protocol 2 11 src-port eq 53
-filter acl ace 2 11 enable
-
 filter acl ace 2 12 name "PERMIT-DNS_TCP_DST53"
 filter acl ace action 2 12 permit count
 filter acl ace action 2 12 permit
@@ -132,14 +90,6 @@ filter acl ace ethernet 2 12 ether-type eq ip
 filter acl ace ip 2 12 ip-protocol-type eq tcp
 filter acl ace protocol 2 12 dst-port eq dns
 filter acl ace 2 12 enable
-
-filter acl ace 2 13 name "PERMIT-DNS_TCP_SRC53"
-filter acl ace action 2 13 permit count
-filter acl ace action 2 13 permit
-filter acl ace ethernet 2 13 ether-type eq ip
-filter acl ace ip 2 13 ip-protocol-type eq tcp
-filter acl ace protocol 2 13 src-port eq 53
-filter acl ace 2 13 enable
 
 filter acl ace 2 60 name "DENY-RFC1918-10/8"
 filter acl ace action 2 60 deny count
