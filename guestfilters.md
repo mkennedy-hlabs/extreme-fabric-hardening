@@ -71,19 +71,19 @@ filter acl ace 1 13 enable
 filter acl ace 1 60 name "DENY-RFC1918-10/8"
 filter acl ace action 1 60 deny count
 filter acl ace ethernet 1 60 ether-type eq ip
-filter acl ace ip 1 60 dst-ip 10.0.0.0 255.0.0.0
+filter acl ace ip 1 60 dst-ip mask 10.0.0.0 8
 filter acl ace 1 60 enable
 
 filter acl ace 1 70 name "DENY-RFC1918-172.16/12"
 filter acl ace action 1 70 deny count
 filter acl ace ethernet 1 70 ether-type eq ip
-filter acl ace ip 1 70 dst-ip 172.16.0.0 255.240.0.0
+filter acl ace ip 1 70 dst-ip mask 172.16.0.0 12
 filter acl ace 1 70 enable
 
 filter acl ace 1 80 name "DENY-RFC1918-192.168/16"
 filter acl ace action 1 80 deny count
 filter acl ace ethernet 1 80 ether-type eq ip
-filter acl ace ip 1 80 dst-ip 192.168.0.0 255.255.0.0
+filter acl ace ip 1 80 dst-ip mask 192.168.0.0 16
 filter acl ace 1 80 enable
 ```
 ### **RESTRICT-GUEST-VLAN**
@@ -144,18 +144,18 @@ filter acl ace 2 13 enable
 filter acl ace 2 60 name "DENY-RFC1918-10/8"
 filter acl ace action 2 60 deny count
 filter acl ace ethernet 2 60 ether-type eq ip
-filter acl ace ip 2 60 dst-ip 10.0.0.0 255.0.0.0
+filter acl ace ip 2 60 dst-ip mask 10.0.0.0 8
 filter acl ace 2 60 enable
 
 filter acl ace 2 70 name "DENY-RFC1918-172.16/12"
 filter acl ace action 2 70 deny count
 filter acl ace ethernet 2 70 ether-type eq ip
-filter acl ace ip 2 70 dst-ip 172.16.0.0 255.240.0.0
+filter acl ace ip 2 70 dst-ip mask 172.16.0.0 12
 filter acl ace 2 70 enable
 
 filter acl ace 2 80 name "DENY-RFC1918-192.168/16"
 filter acl ace action 2 80 deny count
 filter acl ace ethernet 2 80 ether-type eq ip
-filter acl ace ip 2 80 dst-ip 192.168.0.0 255.255.0.0
+filter acl ace ip 2 80 dst-ip mask 192.168.0.0 16
 filter acl ace 2 80 enable
 ```
