@@ -28,15 +28,6 @@ filter acl ace protocol 1 5 src-port eq 68
 filter acl ace protocol 1 5 dst-port eq bootpServer
 filter acl ace 1 5 enable
 
-filter acl ace 1 6 name "PERMIT-DHCP_SERVER_67_TO_68"
-filter acl ace action 1 6 permit count
-filter acl ace action 1 6 permit
-filter acl ace ethernet 1 6 ether-type eq ip
-filter acl ace ip 1 6 ip-protocol-type eq udp
-filter acl ace protocol 1 6 src-port eq 67
-filter acl ace protocol 1 6 dst-port eq bootpClient
-filter acl ace 1 6 enable
-
 filter acl ace 1 10 name "PERMIT-DNS_UDP_DST53"
 filter acl ace action 1 10 permit count
 filter acl ace action 1 10 permit
@@ -45,29 +36,13 @@ filter acl ace ip 1 10 ip-protocol-type eq udp
 filter acl ace protocol 1 10 dst-port eq dns
 filter acl ace 1 10 enable
 
-filter acl ace 1 11 name "PERMIT-DNS_UDP_SRC53"
+filter acl ace 1 11 name "PERMIT-DNS_TCP_DST53"
 filter acl ace action 1 11 permit count
 filter acl ace action 1 11 permit
 filter acl ace ethernet 1 11 ether-type eq ip
-filter acl ace ip 1 11 ip-protocol-type eq udp
-filter acl ace protocol 1 11 src-port eq 53
+filter acl ace ip 1 11 ip-protocol-type eq tcp
+filter acl ace protocol 1 11 dst-port eq dns
 filter acl ace 1 11 enable
-
-filter acl ace 1 12 name "PERMIT-DNS_TCP_DST53"
-filter acl ace action 1 12 permit count
-filter acl ace action 1 12 permit
-filter acl ace ethernet 1 12 ether-type eq ip
-filter acl ace ip 1 12 ip-protocol-type eq tcp
-filter acl ace protocol 1 12 dst-port eq dns
-filter acl ace 1 12 enable
-
-filter acl ace 1 13 name "PERMIT-DNS_TCP_SRC53"
-filter acl ace action 1 13 permit count
-filter acl ace action 1 13 permit
-filter acl ace ethernet 1 13 ether-type eq ip
-filter acl ace ip 1 13 ip-protocol-type eq tcp
-filter acl ace protocol 1 13 src-port eq 53
-filter acl ace 1 13 enable
 
 filter acl ace 1 20 name "PERMIT-NTP_DST123"
 filter acl ace action 1 20 permit count
@@ -77,14 +52,6 @@ filter acl ace ip 1 20 ip-protocol-type eq udp
 filter acl ace protocol 1 20 dst-port eq 123
 filter acl ace 1 20 enable
 
-filter acl ace 1 21 name "PERMIT-NTP_SRC123"
-filter acl ace action 1 21 permit count
-filter acl ace action 1 21 permit
-filter acl ace ethernet 1 21 ether-type eq ip
-filter acl ace ip 1 21 ip-protocol-type eq udp
-filter acl ace protocol 1 21 src-port eq 123
-filter acl ace 1 21 enable
-
 filter acl ace 1 30 name "PERMIT-ICMP"
 filter acl ace action 1 30 permit count
 filter acl ace action 1 30 permit
@@ -92,19 +59,12 @@ filter acl ace ethernet 1 30 ether-type eq ip
 filter acl ace ip 1 30 ip-protocol-type eq icmp
 filter acl ace 1 30 enable
 
-filter acl ace 1 90 name "PERMIT-XIQ-SE_SRC"
+filter acl ace 1 90 name "PERMIT-XIQ-SE_DST"
 filter acl ace action 1 90 permit count
 filter acl ace action 1 90 permit
 filter acl ace ethernet 1 90 ether-type eq ip
-filter acl ace ip 1 90 src-ip eq <XIQ-SE IP ADDRESS>
+filter acl ace ip 1 90 dst-ip eq <XIQ-SE IP ADDRESS>
 filter acl ace 1 90 enable
-
-filter acl ace 1 91 name "PERMIT-XIQ-SE_DST"
-filter acl ace action 1 91 permit count
-filter acl ace action 1 91 permit
-filter acl ace ethernet 1 91 ether-type eq ip
-filter acl ace ip 1 91 dst-ip eq  <XIQ-SE IP ADDRESS>
-filter acl ace 1 91 enable
 
 filter acl ace 1 100 name "DENY-ALL-IPV4-ELSE"
 filter acl ace action 1 100 deny count
