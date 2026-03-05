@@ -16,7 +16,7 @@ Documentation of required steps to deploy Extreme Networks fabric at John Deere 
 Covers deployment process and upgrade process for Extreme Appliances.
 
 ### ACL Filters
-- [Onboarding Filter Config](onbardingfilters.md)
+- [Onboarding Filter Config](onboardingfilters.md)
 - [Guest Filter Config](guestfilters.md)
     
 ### Extreme Networks - Analytics 
