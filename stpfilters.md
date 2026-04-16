@@ -5,22 +5,21 @@
 
 01:00:0c:cc:cc:cd is the Cisco proprietary spanning-tree multicast destination MAC used for SSTP/PVST+/Rapid PVST+ control traffic. This Cisco Shared Spanning Tree Protocol (SSTP) multicast MAC is used to carry PVST+/Rapid PVST+ topology information. Cisco’s registered OUI 00-00-0C is assigned to Cisco Systems, and Cisco uses the multicast destination 01-00-0C-CC-CC-CD for this vendor-specific spanning-tree control plane
 
----
 ### **DROP-STP**
-```
-filter acl &lt;Acl-id&gt; type inPort
-filter acl port 1 1/1,1/2,1/4
-filter acl ace ;&ltAcl-id&gt; ;&ltAcl-id&gt;
-filter acl ace action 1 1 deny count
-filter acl ace ethernet 1 1 dst-mac eq 01:00:0c:cc:cc:cd
-filter acl ace 1 1 enable
-filter acl ace 1 2
-filter acl ace action 1 2 deny count
-filter acl ace ethernet 1 2 dst-mac eq 01:80:c2:00:00:00
-filter acl ace 1 2 enable
 
-```
----
+<pre style="margin:0;">
+filter acl &lt;Acl-id&gt; type inPort
+filter acl port &lt;Acl-id&gt; &lt;Port-List&gt;
+filter acl ace &lt;Acl-id&gt &ltAce-id #1&gt;
+filter acl ace action &lt;Acl-id&gt &ltAce-id #1&gt; deny count
+filter acl ace ethernet &lt;Acl-id&gt  &ltAce-id #1&gt; dst-mac eq 01:00:0c:cc:cc:cd
+filter acl ace &lt;Acl-id&gt &ltAce-id #1&gt; enable
+filter acl ace &lt;Acl-id&gt &ltAce-id #2&gt;
+filter acl ace action &lt;Acl-id&gt &ltAce-id #2&gt; deny count
+filter acl ace ethernet &lt;Acl-id&gt &ltAce-id #2&gt; dst-mac eq 01:80:c2:00:00:00
+filter acl ace &lt;Acl-id&gt &ltAce-id #2&gt; enable
+<\pre>
+
 ### **DROP-STP Example**
 ```
 filter acl 1 type inPort
