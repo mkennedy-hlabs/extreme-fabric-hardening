@@ -18,9 +18,10 @@ filter acl ace &lt;Acl-id&gt &ltAce-id #2&gt;
 filter acl ace action &lt;Acl-id&gt &ltAce-id #2&gt; deny count
 filter acl ace ethernet &lt;Acl-id&gt &ltAce-id #2&gt; dst-mac eq 01:80:c2:00:00:00
 filter acl ace &lt;Acl-id&gt &ltAce-id #2&gt; enable
-<\pre>
+</pre>
 
 ### **DROP-STP Example**
+Within this example ACL 1 was chosen because it was available and not currently in use on the system. The interfaces connected to third-party STP devices are ports 1/1 through 1/4, though the number of affected ports may vary from one deployment to another. Each ACE represents an individual filter entry within the ACL and is processed sequentially. For example, the first entry is ACE 1 and the second entry is ACE 2, although ACE numbering can use any value between 1 and 2000. Since the default global filter action is permit, a deny action was explicitly configured for the targeted traffic, while all other traffic remains permitted. The count option was added only to confirm whether packets are matching the rule set 
 ```
 filter acl 1 type inPort
 filter acl port 1 1/1,1/2,1/4
