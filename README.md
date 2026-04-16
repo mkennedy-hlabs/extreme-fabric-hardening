@@ -18,6 +18,7 @@ Covers deployment process and upgrade process for Extreme Appliances.
 ### ACL Filters
 - [Onboarding Filter Config](onboardingfilters.md)
 - [Guest Filter Config](guestfilters.md)
+- [Drop STP Filter Config](stpfilters.md)
     
 ### Extreme Networks - Analytics 
 - [Analytics](/ExtremeAppliance/Analytics/AnalyticsApplianceDeploy.md) 
