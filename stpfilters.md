@@ -8,7 +8,7 @@
 ---
 ### **DROP-STP**
 ```
-filter acl ;&ltAcl-id&gt; type inPort
+filter acl &lt;Acl-id&gt; type inPort
 filter acl port 1 1/1,1/2,1/4
 filter acl ace ;&ltAcl-id&gt; ;&ltAcl-id&gt;
 filter acl ace action 1 1 deny count
